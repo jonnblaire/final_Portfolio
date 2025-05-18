@@ -9,7 +9,8 @@
 <body>
   <header>
     <div class="logo">John Blaire</div>
-    <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav id="nav-menu">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -18,10 +19,9 @@
   </header>
 
   <section id="home">
-    <img src="picture.jpg" alt="John Blair" class="profile-img" />
+    <img src="picture.jpg" alt="John Blaire" class="profile-img" />
     <h1>Hello, I'm <span class="gradient-text">John Blaire</span></h1>
-    <p class="subheading">Web Developer | Front-end Developer
-</p>
+    <p class="subheading">Web Developer | Front-end Developer</p>
     <button class="btn-filled">Hire Me</button>
   </section>
 
@@ -40,7 +40,7 @@
         <img src="des.jpg" alt="Web Development" />
       </div>
       <div class="service-box">
-        <h3>Web development</h3>
+        <h3>Web Development</h3>
         <p>Creating smart IoT devices and integrations.</p>
         <img src="web.jpg" alt="IoT Solutions" />
       </div>
@@ -57,13 +57,10 @@
     <form class="contact-form">
       <label for="fullname">Fullname:</label>
       <input type="text" id="fullname" name="fullname" placeholder="Your fullname" />
-
       <label for="email">Your email:</label>
       <input type="email" id="email" name="email" placeholder="Your email" />
-
       <label for="message">Your message:</label>
       <textarea id="message" name="message" placeholder="Your message"></textarea>
-
       <button type="submit" class="btn-outline">Send Message</button>
     </form>
   </section>
@@ -85,5 +82,15 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+      menuToggle.classList.toggle('rotate');
+    });
+  </script>
 </body>
 </html>
